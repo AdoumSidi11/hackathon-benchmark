@@ -1,21 +1,21 @@
 # 🛡️ HarmBench AI Security Benchmark
 
-## 📝 Description du Projet
-Ce projet a été développé dans le cadre d'un hackathon. Il a pour objectif d'évaluer et d'analyser la sécurité des modèles d'intelligence artificielle open-source en s'appuyant sur les datasets de HarmBench. Les résultats des tests sont ensuite indexés pour être analysés grâce à une architecture conteneurisée basée sur la stack ELK (Elasticsearch, Logstash, Kibana).
+## 📝 Project Description
+This project was developed during a hackathon. Its goal is to evaluate and analyze the security of open-source artificial intelligence models using the HarmBench datasets. The test results are then indexed for analysis using a containerized architecture based on the ELK stack (Elasticsearch, Logstash, Kibana).
 
-## 🏗️ Architecture et Fichiers Principaux
-* **`extract.py`** : Extraction et filtrage des données de test (catégories ciblées : chimique/biologique, illégal, désinformation) pour générer les prompts.
-* **`benchmark.py`** : Script principal permettant d'exécuter les tests de sécurité sur les modèles d'IA.
-* **`export_to_elasticsearch.py`** : Envoi des résultats d'évaluation (`results.json`) vers un nœud Elasticsearch local.
-* **`docker-compose.yml`** : Fichier de configuration Docker pour déployer rapidement l'environnement de base de données.
+## 🏗️ Architecture and Main Files
+* **`extract.py`**: Extraction and filtering of test data (targeted categories: chemical/biological, illegal, misinformation) to generate prompts.
+* **`benchmark.py`**: Main script to run security tests on the AI models.
+* **`export_to_elasticsearch.py`**: Sends the evaluation results (`results.json`) to a local Elasticsearch node.
+* **`docker-compose.yml`**: Docker configuration file to quickly deploy the database environment.
 
-## ⚙️ Prérequis
-* [Docker](https://www.docker.com/) et Docker Compose installés sur votre machine.
+## ⚙️ Prerequisites
+* [Docker](https://www.docker.com/) and Docker Compose installed on your machine.
 * [Python 3.x](https://www.python.org/)
 
-## 🚀 Installation et Utilisation
+## 🚀 Installation and Usage
 
-**1. Lancer l'environnement de données (Elasticsearch)**
+**Run the database environment and execute the scripts:**
 ```bash
 docker-compose up -d
 python harmbench-benchmark/data/extract.py
